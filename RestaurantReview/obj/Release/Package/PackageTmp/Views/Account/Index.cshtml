@@ -1,0 +1,55 @@
+﻿@model IEnumerable<RestaurantReview.Models.User>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>All Users</h2><br />
+
+@if (User.Identity.IsAuthenticated)
+{
+    <h4>Welcome @User.Identity.Name!</h4>
+
+}
+<p>
+    @Html.ActionLink("All restaurants |", "Index", "Restaurants")
+    @Html.ActionLink("Register |", "Register")
+    @if (!User.Identity.IsAuthenticated) 
+    { 
+        @Html.ActionLink("Log in", "Login")
+    }
+    else
+    {
+        @Html.ActionLink("Log out", "Login")
+    }
+    
+</p>
+
+<div>
+<h4>@Html.ValidationSummary(true, "", new { @class = "text-danger" })</h4>
+<table class="table">
+    
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.username)     
+        </th>
+    
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.username)         
+        </td>
+ 
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { username=item.username }) |
+            @Html.ActionLink("Details", "Details", new { id=item.username }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.username })
+        </td>
+    </tr>
+}
+
+</table>
+</div>

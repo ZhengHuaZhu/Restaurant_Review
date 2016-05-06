@@ -1,0 +1,26 @@
+﻿@model IEnumerable<RestaurantReview.Models.Restaurant>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@section Scripts
+    {
+    <link href="~/Content/HomeIndexStyle.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/geolocation.js"></script>
+}
+
+@using (Html.BeginForm("Render", "Restaurants", FormMethod.Post, new { name = "hiddenForm", id = "hiddenForm" }))
+{
+    @Html.AntiForgeryToken()
+
+    @Html.Hidden("error", 0)
+    @Html.Hidden("latitude", 0)
+    @Html.Hidden("longitude", 0)
+    <div id="enterPostalCode">
+        Enter postal code:
+        @Html.TextBox("postalCode")
+        <input type="submit" value="Done!" class="btn btn-default" />
+    </div>
+}
+

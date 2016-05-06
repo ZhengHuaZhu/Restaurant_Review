@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RestaurantReviewsModelStoreContainer" CdmEntityContainer="RestaurantReviewsDB">
+    <EntitySetMapping Name="Restaurants">
+      <EntityTypeMapping TypeName="RestaurantReviewsModel.Restaurant">
+        <MappingFragment StoreEntitySet="Restaurants">
+          <ScalarProperty Name="restaurantId" ColumnName="restaurantId" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="streetNumber" ColumnName="streetNumber" />
+          <ScalarProperty Name="streetName" ColumnName="streetName" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="postal_code" ColumnName="postal_code" />
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="genre" ColumnName="genre" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="views" ColumnName="views" />
+          <ScalarProperty Name="added_date" ColumnName="added_date" />
+          <ScalarProperty Name="added_by" ColumnName="added_by" />
+          <ScalarProperty Name="edit_date" ColumnName="edit_date" />
+          <ScalarProperty Name="edited_by" ColumnName="edited_by" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reviews">
+      <EntityTypeMapping TypeName="RestaurantReviewsModel.Review">
+        <MappingFragment StoreEntitySet="Reviews">
+          <ScalarProperty Name="reviewId" ColumnName="reviewId" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="restaurantId" ColumnName="restaurantId" />
+          <ScalarProperty Name="reviewed_by" ColumnName="reviewed_by" />
+          <ScalarProperty Name="rating" ColumnName="rating" />
+          <ScalarProperty Name="content" ColumnName="content" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserDetails">
+      <EntityTypeMapping TypeName="RestaurantReviewsModel.UserDetail">
+        <MappingFragment StoreEntitySet="UserDetails">
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="imgPath" ColumnName="imgPath" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="RestaurantReviewsModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

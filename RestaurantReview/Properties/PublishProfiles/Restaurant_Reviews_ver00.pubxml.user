@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>H:\publish1</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>05/01/2015 10:59:48</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>05/01/2015 10:59:48</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>04/30/2015 23:36:12</publishTime>
+    </File>
+    <File Include="bin/RestaurantReview.dll">
+      <publishTime>05/12/2015 18:59:04</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>04/30/2015 23:36:12</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>04/30/2015 23:36:14</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>04/30/2015 23:36:10</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.Deployment.dll">
+      <publishTime>04/30/2015 23:36:12</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.dll">
+      <publishTime>04/30/2015 23:36:12</publishTime>
+    </File>
+    <File Include="bin/System.Web.Webpages.Razor.dll">
+      <publishTime>04/30/2015 23:36:12</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css">
+      <publishTime>05/01/2015 11:19:48</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css">
+      <publishTime>05/01/2015 11:19:48</publishTime>
+    </File>
+    <File Include="Content/HomeIndexStyle.css">
+      <publishTime>05/05/2015 11:31:20</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>05/12/2015 17:13:40</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.eot">
+      <publishTime>05/01/2015 11:19:46</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.svg">
+      <publishTime>05/01/2015 11:19:46</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>05/01/2015 11:19:46</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff">
+      <publishTime>05/01/2015 11:19:46</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>04/30/2015 23:36:10</publishTime>
+    </File>
+    <File Include="Models/RestaurantReviews.edmx.diagram">
+      <publishTime>05/03/2015 15:48:10</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>05/01/2015 11:19:48</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js">
+      <publishTime>05/01/2015 11:19:46</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>05/01/2015 11:19:46</publishTime>
+    </File>
+    <File Include="Scripts/geolocation.js">
+      <publishTime>05/08/2015 08:47:22</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.js">
+      <publishTime>05/01/2015 11:19:42</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.js">
+      <publishTime>05/01/2015 11:19:42</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.map">
+      <publishTime>05/01/2015 11:19:42</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.js">
+      <publishTime>05/01/2015 11:19:44</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.min.js">
+      <publishTime>05/01/2015 11:19:44</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.js">
+      <publishTime>05/01/2015 11:19:44</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.min.js">
+      <publishTime>05/01/2015 11:19:44</publishTime>
+    </File>
+    <File Include="Scripts/modernizr-2.6.2.js">
+      <publishTime>05/01/2015 11:19:48</publishTime>
+    </File>
+    <File Include="Views/Account/Delete.cshtml">
+      <publishTime>05/12/2015 17:57:50</publishTime>
+    </File>
+    <File Include="Views/Account/Details.cshtml">
+      <publishTime>05/12/2015 17:58:22</publishTime>
+    </File>
+    <File Include="Views/Account/Edit.cshtml">
+      <publishTime>05/12/2015 17:58:42</publishTime>
+    </File>
+    <File Include="Views/Account/Index.cshtml">
+      <publishTime>05/12/2015 16:14:32</publishTime>
+    </File>
+    <File Include="Views/Account/Login.cshtml">
+      <publishTime>05/12/2015 15:04:36</publishTime>
+    </File>
+    <File Include="Views/Account/Register.cshtml">
+      <publishTime>05/12/2015 09:35:58</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>05/12/2015 10:36:48</publishTime>
+    </File>
+    <File Include="Views/Restaurants/AddReviews.cshtml">
+      <publishTime>05/12/2015 16:30:06</publishTime>
+    </File>
+    <File Include="Views/Restaurants/Create.cshtml">
+      <publishTime>05/12/2015 13:59:54</publishTime>
+    </File>
+    <File Include="Views/Restaurants/Delete.cshtml">
+      <publishTime>05/12/2015 17:59:32</publishTime>
+    </File>
+    <File Include="Views/Restaurants/DeleteReviews.cshtml">
+      <publishTime>05/12/2015 16:30:44</publishTime>
+    </File>
+    <File Include="Views/Restaurants/Details.cshtml">
+      <publishTime>05/12/2015 17:59:46</publishTime>
+    </File>
+    <File Include="Views/Restaurants/Edit.cshtml">
+      <publishTime>05/12/2015 18:00:00</publishTime>
+    </File>
+    <File Include="Views/Restaurants/EditReviews.cshtml">
+      <publishTime>05/12/2015 16:31:52</publishTime>
+    </File>
+    <File Include="Views/Restaurants/Index.cshtml">
+      <publishTime>05/12/2015 16:32:06</publishTime>
+    </File>
+    <File Include="Views/Restaurants/Render.cshtml">
+      <publishTime>05/12/2015 16:50:00</publishTime>
+    </File>
+    <File Include="Views/Restaurants/Reviews.cshtml">
+      <publishTime>05/12/2015 16:57:10</publishTime>
+    </File>
+    <File Include="Views/Searching/Index.cshtml">
+      <publishTime>05/12/2015 17:16:44</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>05/12/2015 12:03:46</publishTime>
+    </File>
+    <File Include="Views/web.config">
+      <publishTime>04/30/2015 23:36:10</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>05/01/2015 11:19:38</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>05/12/2015 17:27:56</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,180 @@
+﻿@model RestaurantReview.Models.Restaurant
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2><br />
+
+@if (User.Identity.IsAuthenticated)
+{
+    <h4>Welcome @User.Identity.Name!</h4>
+    if (Model.UserDetail.imgPath != null && Model.UserDetail.username == User.Identity.Name)
+    {
+        <img src="@Url.Content(Model.UserDetail.imgPath)" alt="an user profile image">
+    }
+}
+
+<div>
+    <h4>Restaurant</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.streetNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.streetNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.streetName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.streetName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.city)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.city)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.postal_code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.postal_code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.genre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.genre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.views)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.views)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.added_by)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.added_by)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.added_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.added_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.edited_by)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.edited_by)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.edit_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.edit_date)
+        </dd>
+    </dl>
+
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.restaurantId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</div>
+
+<div>
+        <h4>Reviews</h4>
+        <hr />
+
+@foreach (var item in ((List<RestaurantReview.Models.Review>)ViewBag.Reviews))
+{
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model=>item.title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(modelItem=>item.title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(modelItem => item.reviewed_by)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(modelItem => item.reviewed_by)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(modelItem => item.date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(modelItem => item.date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(modelItem => item.rating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(modelItem => item.rating)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(modelItem => item.content)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(modelItem => item.content)
+        </dd>
+    </dl>
+    <p>
+        @Html.ActionLink("Edit", "EditReviews", new { id = item.reviewId }) |      
+        @Html.ActionLink("Delete", "DeleteReviews", new { id = item.reviewId })
+    </p>
+}
+    @Html.ActionLink("Add your review", "AddReviews", new { id = Model.restaurantId })
+</div>
+
+

@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RestaurantReviewsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Restaurants">
+    <Key>
+      <PropertyRef Name="restaurantId" />
+    </Key>
+    <Property Name="restaurantId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="streetNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="streetName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="city" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="postal_code" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="location" Type="geography" />
+    <Property Name="genre" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="price" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="views" Type="int" />
+    <Property Name="added_date" Type="date" Nullable="false" />
+    <Property Name="added_by" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="edit_date" Type="date" />
+    <Property Name="edited_by" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Reviews">
+    <Key>
+      <PropertyRef Name="reviewId" />
+    </Key>
+    <Property Name="reviewId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="date" Type="date" Nullable="false" />
+    <Property Name="restaurantId" Type="int" Nullable="false" />
+    <Property Name="reviewed_by" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="rating" Type="int" Nullable="false" />
+    <Property Name="content" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="UserDetails">
+    <Key>
+      <PropertyRef Name="username" />
+    </Key>
+    <Property Name="username" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="firstname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="lastname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="city" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="country" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="imgPath" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="username" />
+    </Key>
+    <Property Name="username" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Restaurants">
+    <End Role="UserDetails" Type="Self.UserDetails" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Restaurants" Type="Self.Restaurants" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserDetails">
+        <PropertyRef Name="username" />
+      </Principal>
+      <Dependent Role="Restaurants">
+        <PropertyRef Name="added_by" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Restaurants2">
+    <End Role="UserDetails" Type="Self.UserDetails" Multiplicity="0..1" />
+    <End Role="Restaurants" Type="Self.Restaurants" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserDetails">
+        <PropertyRef Name="username" />
+      </Principal>
+      <Dependent Role="Restaurants">
+        <PropertyRef Name="edited_by" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Reviews">
+    <End Role="Restaurants" Type="Self.Restaurants" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Reviews" Type="Self.Reviews" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Restaurants">
+        <PropertyRef Name="restaurantId" />
+      </Principal>
+      <Dependent Role="Reviews">
+        <PropertyRef Name="restaurantId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="RestaurantReviewsModelStoreContainer">
+    <EntitySet Name="Restaurants" EntityType="Self.Restaurants" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Reviews" EntityType="Self.Reviews" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserDetails" EntityType="Self.UserDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Restaurants" Association="Self.FK_Restaurants">
+      <End Role="UserDetails" EntitySet="UserDetails" />
+      <End Role="Restaurants" EntitySet="Restaurants" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Restaurants2" Association="Self.FK_Restaurants2">
+      <End Role="UserDetails" EntitySet="UserDetails" />
+      <End Role="Restaurants" EntitySet="Restaurants" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reviews" Association="Self.FK_Reviews">
+      <End Role="Restaurants" EntitySet="Restaurants" />
+      <End Role="Reviews" EntitySet="Reviews" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,77 @@
+﻿@model RestaurantReview.Models.User
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>User details</h2><br />
+
+@if (User.Identity.IsAuthenticated)
+{
+    <h4>Welcome @User.Identity.Name!</h4>
+    if (Model.UserDetail.imgPath != null && Model.UserDetail.username == User.Identity.Name)
+    {
+        <img src="@Url.Content(Model.UserDetail.imgPath)" alt="an user profile image">
+    }
+}
+
+<div>
+    <h4>@Html.ValidationSummary(true, "", new { @class = "text-danger" })</h4>
+
+    <h4>User @Html.DisplayFor(model => model.UserDetail.username)</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UserDetail.firstname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserDetail.firstname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserDetail.lastname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserDetail.lastname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserDetail.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserDetail.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserDetail.city)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserDetail.city)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserDetail.country)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserDetail.country)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserDetail.imgPath)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserDetail.imgPath)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { username = Model.username }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

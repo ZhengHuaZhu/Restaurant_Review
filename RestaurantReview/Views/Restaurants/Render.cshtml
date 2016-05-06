@@ -1,0 +1,79 @@
+﻿@model IEnumerable<RestaurantReview.Models.Restaurant>
+
+@{
+    ViewBag.Title = "HomePage";
+}
+
+<h2>Home</h2><br />
+@if (User.Identity.IsAuthenticated)
+{
+    <h4>Welcome @User.Identity.Name!</h4> 
+}
+
+<div id="menu">
+    @Html.ActionLink("Add a restaurant |", "Create", "Restaurants")
+    @if (User.Identity.IsAuthenticated)
+    {
+        @Html.ActionLink("Log out |", "Logout", "Account")       
+    }
+    else
+    {
+        @Html.ActionLink("Log in |", "Login", "Account")
+    }    
+    @Html.ActionLink("Register", "Register", "Account")
+</div>
+@*
+<p>
+    <h3>@Html.ValidationMessage("Error")</h3>
+</p>8*@
+<br /><br /><br />
+<div>
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.genre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model=>model.numOfReviews)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model=>model.avgRating)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.genre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem=>item.numOfReviews)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem=>item.avgRating)
+        </td>
+       
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.restaurantId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.restaurantId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.restaurantId }) 
+        </td>
+    </tr>
+}
+
+</table>
+    </div>
